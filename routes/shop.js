@@ -9,6 +9,7 @@ const {
   getProduct,
   postCart,
   postCartDeleteProduct,
+  postOrder,
 } = require("../controllers/shop");
 
 const router = express.Router();
@@ -21,11 +22,13 @@ router.get("/products/:productId", getProduct);
 
 router.post("/cart", postCart);
 
-router.post('/cart-delete-item', postCartDeleteProduct);
+router.post("/cart-delete-item", postCartDeleteProduct);
 
 router.get("/checkout", getCheckout);
 
 router.get("/orders", getOrders);
+
+router.post("/create-order", postOrder);
 
 router.get("/", getIndex);
 
